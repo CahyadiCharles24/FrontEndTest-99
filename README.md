@@ -44,7 +44,7 @@ This repository contains my submission for the Frontend Engineer (Intern) positi
    ```
 
 4. Line returns (new lines) in the description text should be displayed on page. The text must NOT be all in one line.
-   plits it into an array using the newline character ("\n"), and then maps over that array to create a new paragraph ("<p>") element for each line. This ensures that each line of the description is rendered on a newline in the output.
+   plits it into an array using the newline character ("\n"), and then maps over that array to create a new paragraph ("p") tag element for each line. This ensures that each line of the description is rendered on a newline in the output.
    ```javaScript
       {descVisible &&
             props.description.split("\n").map((text, idx) => (
