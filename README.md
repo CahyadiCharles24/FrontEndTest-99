@@ -18,18 +18,29 @@ This repository contains my submission for the Frontend Engineer (Intern) positi
       };
    ```
    
-   
-3. Because of SEO we want to only hide description after page load
+2. Because of SEO we want to only hide description after page load
    Using useEffect hook to set 
    
-4. Anonymize all phone numbers: first 4 numbers visible, replace following 4 with X (e.g. 8111 XXXX or 8123 XXXX)
+3. Anonymize all phone numbers: first 4 numbers visible, replace following 4 with X (e.g. 8111 XXXX or 8123 XXXX)
    Note Singapore phone number format is always 8 numbers long.
    See [Number Ranges on wikipedia](https://en.wikipedia.org/wiki/Telephone_numbers_in_Singapore#Number_ranges) for precise rules.
+   ```Javascript
+      const regex =/\b(3\d{3}\s*\d{4}|6\d{3}\s*\d{4}|8\d{3}\s*\d{4}|9[0-8]\d{2}\s*\d{4})\b/g;
+      {text.split(regex).map((num, i) =>
+                  regex.test(num) ? (
+                    <span className="number" key={i} onClick={toogleNumVisible}>
+                      {numVisible ? num : num.slice(0, num.length - 4) + "XXXX"}
+                    </span>
+                  ) : (
+                    num
+                  )
+                )}
+   ```
 
 5. Line returns (new lines) in the description text should be displayed on page. The text must NOT be all in one line.
 
 6. Clicking on phone number reveals the real number
-
+   
 
 
 ### Styling
