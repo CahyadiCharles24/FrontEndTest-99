@@ -9,7 +9,7 @@ This repository contains my submission for the Frontend Engineer (Intern) positi
 ### React
 
 1. Hide description until the button is clicked
-   Using useState Hook from React to track description is shown or hidden.
+   \nUsing useState Hook from React to track description is shown or hidden.
    then the button is use to show the description.
    ``` Javascript
       const [descVisible, setDescVisible] = useState(true);
